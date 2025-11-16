@@ -393,12 +393,16 @@
         .publication-thumbnail {
             width: 120px;
             height: 80px;
+            min-width: 120px;
             object-fit: contain;
-            background-color: transparent;
-            padding: 0;
+            background-color: #f5f5f5;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            padding: 4px;
             margin: 0;
             display: block;
             transition: transform 0.3s ease;
+            flex-shrink: 0;
         }
 
         .publications-list li:hover .publication-thumbnail {
