@@ -430,6 +430,12 @@
             white-space: nowrap;
         }
 
+        /* Prevent breaking between bold name and comma */
+        .publication-content .author-line strong::after {
+            content: '\00A0'; /* non-breaking space */
+            white-space: normal;
+        }
+
         .publication-content a {
             text-decoration: none;
             transition: color 0.3s ease;
@@ -1047,4 +1053,5 @@
     </script>
 </body>
 
+</html>
 </html>
