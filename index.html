@@ -1183,14 +1183,8 @@
             const modal = document.getElementById('imageModal');
             const modalContent = document.querySelector('.modal-content');
             if (modal && modalContent) {
-                // Convert PDF path to PNG path for better browser compatibility
-                let imagePath = imageSrc;
-                if (imageSrc.endsWith('.pdf')) {
-                    // Replace PDF path with PNG path
-                    imagePath = imageSrc.replace('/papers_main_fig/', '/papers_main_fig/').replace('.pdf', '.png');
-                }
                 modalContent.innerHTML = '<span class="modal-close" onclick="closeModal()" aria-label="Close">&times;</span>' +
-                    '<img id="modalImage" src="' + imagePath + '" alt="Publication diagram" onerror="this.onerror=null; this.src=\'' + imageSrc + '\';">';
+                    '<img id="modalImage" src="' + imageSrc + '" alt="Publication diagram">';
                 modal.classList.add('active');
                 document.body.style.overflow = 'hidden'; // Prevent background scrolling
             }
