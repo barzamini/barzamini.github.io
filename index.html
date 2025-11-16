@@ -79,6 +79,7 @@
             background: var(--bg-color);
             color: var(--text-color);
             line-height: 1.6;
+            overflow-x: hidden; /* Prevent horizontal scroll on mobile */
         }
 
         header {
@@ -1176,7 +1177,53 @@
             }
         });
         */
+
+        // Image Modal functionality
+        function openModal(imageSrc) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            if (modal && modalImg) {
+                modalImg.src = imageSrc;
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            }
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            if (modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto'; // Restore scrolling
+            }
+        }
+
+        // Close modal when clicking outside the image or pressing Escape
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById('imageModal');
+            if (modal) {
+                modal.addEventListener('click', function(e) {
+                    if (e.target === modal) {
+                        closeModal();
+                    }
+                });
+
+                // Close modal with Escape key
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape' && modal.classList.contains('active')) {
+                        closeModal();
+                    }
+                });
+            }
+        });
     </script>
+    
+    <!-- Image Modal -->
+    <div id="imageModal" class="image-modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal()" aria-label="Close">&times;</span>
+            <img id="modalImage" src="" alt="Publication diagram">
+        </div>
+    </div>
     
     <!-- Simple and reliable visitor counter using FlagCounter -->
     <script>
@@ -1207,6 +1254,4 @@
         });
     </script>
 </body>
-
-</html>
 </html>
