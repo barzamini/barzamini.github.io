@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hamed Barzamini - Ph.D. candidate in Computer Science specializing in Requirements Engineering for AI-enabled Software">
+    <title>Hamed Barzamini - Ph.D. Candidate in Computer Science</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --primary-color: #002b5e;
+            --secondary-color: #a7c5ed;
+            --text-color: #333;
+            --bg-color: #f0f4f8;
+            --card-bg: #fff;
+            --hover-color: #003875;
+            --animation-duration: 0.5s;
+            --animation-timing: cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                transform: scale(0.95);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background: var(--primary-color);
+            color: #fff;
+            padding: 3rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--secondary-color);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+            letter-spacing: 1px;
+            animation: fadeInUp var(--animation-duration) var(--animation-timing);
+        }
+
+        header .title {
+            font-size: 1.4rem;
+            margin: 1rem 0;
+            color: var(--secondary-color);
+            animation: fadeInUp var(--animation-duration) var(--animation-timing) 0.2s;
+        }
+
+        .contact-links {
+            margin: 1.5rem 0;
+            animation: fadeInUp var(--animation-duration) var(--animation-timing) 0.4s;
+        }
+
+        .contact-links a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            margin: 0 1rem;
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--secondary-color);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-links a:hover {
+            background: var(--secondary-color);
+            color: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 0 auto 2rem;
+            display: block;
+            border: 4px solid var(--secondary-color);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            object-fit: cover;
+            animation: scaleIn var(--animation-duration) var(--animation-timing);
+        }
+
+        @media (max-width: 768px) {
+            .profile-photo {
+                width: 150px;
+                height: 150px;
+            }
+        }
+
+        .contact-info {
+            max-width: 800px;
+            margin: 2rem auto;
+            text-align: center;
+            color: var(--secondary-color);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .contact-info p {
+            margin: 0.5rem 0;
+        }
+
+        .news-section {
+            max-width: 800px;
+            margin: 3rem auto;
+            text-align: left;
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            animation: fadeInUp var(--animation-duration) var(--animation-timing) 0.6s;
+        }
+
+        .news-section h2 {
+            text-align: left;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .news-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--secondary-color);
+        }
+
+        .news-section ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .news-section li {
+            position: relative;
+            padding: 0.8rem 0;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            border-bottom: 1px solid rgba(0, 43, 94, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .news-section li:last-child {
+            border-bottom: none;
+        }
+
+        .news-section li:before {
+            content: "•";
+            position: absolute;
+            left: -1rem;
+            color: var(--primary-color);
+        }
+
+        .news-section li:hover {
+            transform: translateX(5px);
+        }
+
+        .news-section a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .news-section a:hover {
+            color: var(--hover-color);
+        }
+
+        main {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .stats-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .citation-graph {
+            flex: 1;
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            height: 300px;
+            animation: slideInLeft var(--animation-duration) var(--animation-timing) 0.8s;
+        }
+
+        .citation-graph h3 {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .citation-stats {
+            flex: 1;
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            animation: slideInRight var(--animation-duration) var(--animation-timing) 0.8s;
+        }
+
+        .citation-stats h3 {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .stat-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.8rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid rgba(0, 43, 94, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-item:last-child {
+            border-bottom: none;
+        }
+
+        .stat-item:hover {
+            transform: translateX(5px);
+        }
+
+        .stat-label {
+            color: var(--text-color);
+            font-size: 0.95rem;
+        }
+
+        .stat-value {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .publications-section {
+            max-width: 1200px;
+            margin: 3rem auto;
+            text-align: left;
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            animation: fadeInUp var(--animation-duration) var(--animation-timing) 1s;
+        }
+
+        .publications-section h2 {
+            text-align: left;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .publications-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--secondary-color);
+        }
+
+        .publications-list {
+            margin-top: 2rem;
+        }
+
+        .publications-list h3 {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .publications-list h4 {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--secondary-color);
+        }
+
+        .publications-list h4:first-child {
+            margin-top: 0;
+        }
+
+        .publications-list ul {
+            margin-bottom: 1rem;
+        }
+
+        .publications-list ul:last-child {
+            margin-bottom: 0;
+        }
+
+        .publications-list li {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+            align-items: flex-start;
+            transition: transform 0.3s ease;
+        }
+
+        .publications-list li:hover {
+            transform: translateX(5px);
+        }
+
+        .publication-thumbnail {
+            width: 120px;
+            height: 80px;
+            object-fit: contain;
+            background-color: transparent;
+            padding: 0;
+            margin: 0;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .publications-list li:hover .publication-thumbnail {
+            transform: scale(1.05);
+        }
+
+        .publication-content {
+            flex: 1;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .publication-content strong {
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+            line-height: 1.3;
+        }
+
+        .publication-content a {
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .publication-content a:hover {
+            color: var(--hover-color);
+        }
+
+        .publication-content br + text {
+            font-size: 0.9rem;
+            color: var(--text-color);
+            opacity: 0.9;
+        }
+
+        .venue {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .chatbot-section {
+            max-width: 900px;
+            margin: 3rem auto;
+            text-align: left;
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 43, 94, 0.1);
+            animation: fadeInUp var(--animation-duration) var(--animation-timing) 0.8s;
+            border: 1px solid rgba(167, 197, 237, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .chatbot-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), #00d4ff);
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
+        }
+
+        .chatbot-section h2 {
+            text-align: left;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .chatbot-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--secondary-color);
+        }
+
+        .chatbot-description {
+            margin-bottom: 2rem;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .chatbot-container {
+            position: relative;
+            width: 100%;
+            min-height: 450px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 50%, #00d4ff 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 12px 40px rgba(0, 43, 94, 0.2);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+        }
+
+        .chatbot-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .chatbot-container:hover {
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: 0 20px 60px rgba(0, 43, 94, 0.3);
+        }
+
+        .chatbot-placeholder {
+            text-align: center;
+            color: white;
+            padding: 3rem 2rem;
+            max-width: 600px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .chatbot-icon {
+            font-size: 5rem;
+            margin-bottom: 2rem;
+            animation: float 3s ease-in-out infinite;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            33% {
+                transform: translateY(-10px) rotate(2deg);
+            }
+            66% {
+                transform: translateY(5px) rotate(-1deg);
+            }
+        }
+
+        .chatbot-placeholder h3 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 0.8s ease-out 0.3s both;
+        }
+
+        .chatbot-placeholder p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            line-height: 1.7;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+
+        .sample-questions {
+            margin: 2rem 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            justify-content: center;
+            animation: fadeInUp 0.8s ease-out 0.9s both;
+        }
+
+        .sample-question {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+        }
+
+        .sample-question:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .chatbot-launch-button {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background: linear-gradient(45deg, #ffffff, #f8f9ff);
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            border: 3px solid rgba(255, 255, 255, 0.8);
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 0.8s ease-out 1.2s both;
+        }
+
+        .chatbot-launch-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .chatbot-launch-button:hover::before {
+            left: 100%;
+        }
+
+        .chatbot-launch-button:hover {
+            background: linear-gradient(45deg, var(--secondary-color), #00d4ff);
+            color: white;
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 12px 35px rgba(0, 43, 94, 0.4);
+            border-color: rgba(255, 255, 255, 0.9);
+        }
+
+        .ai-features {
+            margin-top: 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            animation: fadeInUp 0.8s ease-out 1.5s both;
+        }
+
+        .ai-feature {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .ai-feature:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .ai-feature-icon {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .ai-feature-text {
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .chatbot-section {
+                padding: 2rem;
+                margin: 2rem auto;
+            }
+            
+            .chatbot-container {
+                min-height: 400px;
+                border-radius: 16px;
+            }
+            
+            .chatbot-placeholder {
+                padding: 2.5rem 1.5rem;
+            }
+            
+            .chatbot-icon {
+                font-size: 4rem;
+            }
+            
+            .chatbot-placeholder h3 {
+                font-size: 1.8rem;
+            }
+            
+            .chatbot-placeholder p {
+                font-size: 1.1rem;
+            }
+
+            .sample-questions {
+                gap: 0.6rem;
+            }
+
+            .sample-question {
+                padding: 0.5rem 1rem;
+                font-size: 0.85rem;
+            }
+
+            .chatbot-launch-button {
+                padding: 1rem 2rem;
+                font-size: 1.1rem;
+            }
+
+            .ai-features {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+                gap: 0.8rem;
+            }
+
+            .ai-feature {
+                padding: 0.8rem;
+            }
+
+            .ai-feature-icon {
+                font-size: 1.5rem;
+            }
+
+            .ai-feature-text {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <img src="./images/profile.jpg" alt="Hamed Barzamini" class="profile-photo" loading="lazy">
+            <h1>Hamed Barzamini</h1>
+            <div class="title">Ph.D. candidate in Computer Science at Northern Illinois University</div>
+            <div class="contact-links">
+                <a href="mailto:h.barzamini@niu.edu">Email</a>
+                <a href="https://www.linkedin.com/in/hamed-b-a0943280/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/barzamini" target="_blank">GitHub</a>
+                <a href="./assets/pdf/CV_Academic.pdf" target="_blank">CV</a>
+            </div>
+            <p style="max-width: 800px; margin: 2rem auto; line-height: 1.8; text-align: justify;">
+                I am a Ph.D. candidate in Computer Science at Northern Illinois University, working under the supervision of Dr. Mona Rahimi. My research focuses on <strong>semantics-aware AI systems</strong>, <strong>requirements engineering for AI-enabled software</strong>, and <strong>evidence-based evaluation frameworks</strong>.
+
+                I develop frameworks and tools for evaluating and improving AI-enabled perception systems, with a particular focus on safety-critical applications such as autonomous driving. My work combines requirements engineering, machine learning, and domain-driven design to create systematic approaches for dataset evaluation, model generalizability, and concept drift detection.
+
+                My research addresses critical challenges in developing and evaluating AI-enabled software systems, particularly in safety-critical domains. I work on requirements engineering for AI systems, dataset quality assessment, black-box evaluation, concept drift detection, and safety-critical applications. I have developed frameworks achieving 95% F2-score for pedestrian detection and improved dataset alignment by 35% in autonomous driving systems.
+            </p>
+        </div>
+    </header>
+    <main>
+        <div class="news-section">
+            <h2>News</h2>
+            <ul>
+                <li>Our paper "Specifying Operational Design Domain in Autonomous Driving for Comprehensive Data Evaluation" has been accepted to <span class="venue">RE 2025</span></li>
+                <li>Our paper "An AI-driven Requirements Engineering Framework Tailored for Evaluating AI-Based Software" has been accepted to <span class="venue">CAIN 2025</span></li>
+                <li>Our paper "Dynamic domain analysis for predicting concept drift in engineering AI-enabled software" has been published in <span class="venue">Journal of Data and Information Science</span></li>
+                <li>Completed Research and Development Internship at <span class="venue">General Motors</span>, working on ODD specification frameworks for autonomous driving</li>
+                <li>Presented B-AIS framework at <span class="venue">ASE 2022</span> - Automated black-box evaluation system for visual perception in AI-enabled software</li>
+                <li>Presented CADE benchmark at <span class="venue">RE 2022</span> - Systematic dataset evaluation framework for AI-enabled software</li>
+                <li>Started Research Assistant position at Northern Illinois University under <span class="venue">Dr. Mona Rahimi</span></li>
+            </ul>
+        </div>
+
+
+        <div class="publications-section">
+            <h2>Publications</h2>
+            <div class="stats-container">
+                <div class="citation-stats" style="width: 100%;">
+                    <h3>Research Highlights</h3>
+                    <div class="stat-item">
+                        <span class="stat-label">Publications</span>
+                        <span class="stat-value">8</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Conferences</span>
+                        <span class="stat-value">5</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Journals</span>
+                        <span class="stat-value">3</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="publications-list">
+                <h3>Publications</h3>
+                
+                <h4>2025</h4>
+                <ul>
+                    <li>
+                        <div class="publication-content">
+                            <a href="./assets/pdf/2025_ODD.pdf" target="_blank"><strong>Specifying Operational Design Domain in Autonomous Driving for Comprehensive Data Evaluation</strong></a><br>
+                            <strong>H. Barzamini</strong>, S. Ramesh, A. Adiththan, P. Peranandam, & M. Rahimi<br>
+                            IEEE 33rd International Requirements Engineering Conference (RE 2025), 43-55
+                        </div>
+                    </li>
+                    <li>
+                        <div class="publication-content">
+                            <a href="./assets/pdf/2025-WAIS_CAIN25_IEEEFormat.pdf" target="_blank"><strong>An AI-driven Requirements Engineering Framework Tailored for Evaluating AI-Based Software</strong></a><br>
+                            <strong>H. Barzamini</strong>, A. Brockmann, F. Nazaritiji, H. Ferdowsi, & M. Rahimi<br>
+                            CAIN 2025 — 4th International Conference on AI Engineering – Software Engineering for AI
+                        </div>
+                    </li>
+                    <li>
+                        <div class="publication-content">
+                            <a href="./assets/pdf/2025_Concept_Drift_JDIS___revision__v2_.pdf" target="_blank"><strong>Dynamic domain analysis for predicting concept drift in engineering AI-enabled software</strong></a><br>
+                            M. Shahzad, <strong>H. Barzamini</strong>, J. Wilson, H. Alhoori, & M. Rahimi<br>
+                            Journal of Data and Information Science, 10(2), 124-151
+                        </div>
+                    </li>
+                </ul>
+
+                <h4>2022</h4>
+                <ul>
+                    <li>
+                        <div class="publication-content">
+                            <a href="./assets/pdf/2021_RE_Journal.pdf" target="_blank"><strong>A multi-level semantic web for hard-to-specify domain concept, Pedestrian, in ML-based software</strong></a><br>
+                            <strong>H. Barzamini</strong>, M. Shahzad, H. Alhoori, & M. Rahimi<br>
+                            Requirements Engineering
+                        </div>
+                    </li>
+                    <li>
+                        <div class="publication-content">
+                            <a href="./assets/pdf/2022_BAIS-ase22_209.pdf" target="_blank"><strong>B-AIS: An Automated Process for Black-box Evaluation of Visual Perception in AI-enabled Software against Domain Semantics</strong></a><br>
+                            <strong>H. Barzamini</strong> & M. Rahimi<br>
+                            37th IEEE/ACM International Conference on Automated Software Engineering (ASE 2022)
+                        </div>
+                    </li>
+                    <li>
+                        <div class="publication-content">
+                            <a href="./assets/pdf/2022_RE_22_AIS.pdf" target="_blank"><strong>CADE: The Missing Benchmark in Evaluating Dataset Requirements of AI-enabled Software</strong></a><br>
+                            <strong>H. Barzamini</strong> & M. Rahimi<br>
+                            IEEE 30th International Requirements Engineering Conference (RE 2022), 64-76
+                        </div>
+                    </li>
+                    <li>
+                        <div class="publication-content">
+                            <a href="./assets/pdf/2022_ICSE_22_CAIN.pdf" target="_blank"><strong>Improving Generalizability of ML-enabled Software Through Domain Specification</strong></a><br>
+                            <strong>H. Barzamini</strong>, M. Rahimi, M. Shahzad, & H. Alhoori<br>
+                            1st International Conference on AI Engineering: Software Engineering for AI (CAIN 2022), 181-192
+                        </div>
+                    </li>
+                </ul>
+
+                <h4>2019</h4>
+                <ul>
+                    <li>
+                        <div class="publication-content">
+                            <strong>Comparison analysis of electricity theft detection methods for advanced metering infrastructure in smart grid</strong><br>
+                            <strong>H. Barzamini</strong> & M. Ghassemian<br>
+                            International Journal of Electronic Security and Digital Forensics, 11(3), 265-280
+                        </div>
+                    </li>
+                </ul>
+            </div></div>
+        </div>
+    </main>
+
+    <script>
+        // Citation chart removed - using simple stats display instead
+        /*
+        const ctx = document.getElementById('citationChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025'],
+                datasets: [{
+                    label: 'Citations',
+                    data: [5, 8, 26, 43, 120, 207, 229, 231], // Updated 2025 value to 64
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.7)',   // Pink
+                        'rgba(54, 162, 235, 0.7)',   // Blue
+                        'rgba(255, 206, 86, 0.7)',   // Yellow
+                        'rgba(75, 192, 192, 0.7)',   // Teal
+                        'rgba(153, 102, 255, 0.7)',  // Purple
+                        'rgba(255, 159, 64, 0.7)',   // Orange
+                        'rgba(46, 204, 113, 0.7)',   // Green
+                        'rgba(142, 68, 173, 0.7)'    // Deep Purple
+                    ],
+                    borderColor: [
+                        'rgb(255, 99, 132)',
+                        'rgb(54, 162, 235)',
+                        'rgb(255, 206, 86)',
+                        'rgb(75, 192, 192)',
+                        'rgb(153, 102, 255)',
+                        'rgb(255, 159, 64)',
+                        'rgb(46, 204, 113)',
+                        'rgb(142, 68, 173)'
+                    ],
+                    borderWidth: 1,
+                    borderRadius: 5,
+                    hoverBackgroundColor: [
+                        'rgba(255, 99, 132, 0.9)',
+                        'rgba(54, 162, 235, 0.9)',
+                        'rgba(255, 206, 86, 0.9)',
+                        'rgba(75, 192, 192, 0.9)',
+                        'rgba(153, 102, 255, 0.9)',
+                        'rgba(255, 159, 64, 0.9)',
+                        'rgba(46, 204, 113, 0.9)',
+                        'rgba(142, 68, 173, 0.9)'
+                    ]
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: {
+                            color: 'rgba(0, 0, 0, 0.05)'
+                        },
+                        ticks: {
+                            font: {
+                                family: 'Montserrat'
+                            }
+                        }
+                    },
+                    x: {
+                        grid: {
+                            display: false
+                        },
+                        ticks: {
+                            font: {
+                                family: 'Montserrat'
+                            }
+                        }
+                    }
+                },
+                animation: {
+                    duration: 2000,
+                    easing: 'easeInOutQuart'
+                },
+                hover: {
+                    mode: 'nearest',
+                    intersect: true
+                }
+            }
+        });
+
+        // Function to fetch citation data from Google Scholar
+        async function updateCitationData() {
+            try {
+                const response = await fetch('https://scholar.google.com/citations?user=QT0EXIkAAAAJ&hl=en');
+                // Parse the response and update chart data
+                // Note: You'll need a backend service to handle CORS and data scraping
+            } catch (error) {
+                console.error('Error fetching citation data:', error);
+            }
+        }
+
+        // Interactive sample questions for chatbot
+        document.addEventListener('DOMContentLoaded', function() {
+            const sampleQuestions = document.querySelectorAll('.sample-question');
+            const chatbotButton = document.querySelector('.chatbot-launch-button');
+            
+            sampleQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    // Add a subtle animation when clicked
+                    this.style.transform = 'scale(0.95)';
+                    this.style.background = 'rgba(255, 255, 255, 0.4)';
+                    
+                    setTimeout(() => {
+                        this.style.transform = '';
+                        this.style.background = '';
+                    }, 150);
+                    
+                    // Open the chatbot with the question (you could enhance this further)
+                    setTimeout(() => {
+                        window.open(chatbotButton.href, '_blank');
+                    }, 200);
+                });
+            });
+
+            // Add typing animation effect to the chatbot icon
+            const chatbotIcon = document.querySelector('.chatbot-icon');
+            if (chatbotIcon) {
+                setInterval(() => {
+                    chatbotIcon.style.filter = 'drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3)) brightness(1.1)';
+                    setTimeout(() => {
+                        chatbotIcon.style.filter = 'drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3))';
+                    }, 500);
+                }, 3000);
+            }
+        });
+    </script>
+    
+    <!-- Simple and reliable visitor counter using FlagCounter -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Create container for counter
+            const counterContainer = document.createElement('div');
+            counterContainer.style.position = 'fixed';
+            counterContainer.style.bottom = '10px';
+            counterContainer.style.right = '10px';
+            counterContainer.style.background = 'rgba(255, 255, 255, 0.95)';
+            counterContainer.style.padding = '8px 12px';
+            counterContainer.style.borderRadius = '8px';
+            counterContainer.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.1)';
+            counterContainer.style.fontFamily = 'Montserrat, sans-serif';
+            counterContainer.style.zIndex = '1000';
+            counterContainer.style.display = 'flex';
+            counterContainer.style.flexDirection = 'column';
+            counterContainer.style.alignItems = 'center';
+            
+            // Simple flag counter - a proven solution
+            counterContainer.innerHTML = '<div style="font-size:12px;color:#666;font-weight:500;margin-bottom:4px">Visitors:</div>' +
+                '<a href="https://info.flagcounter.com/8m5j">' +
+                '<img src="https://s11.flagcounter.com/mini/8m5j/bg_FFFFFF/txt_000000/border_CCCCCC/flags_0/" ' +
+                'alt="Visitor Counter" style="border:0;">' +
+                '</a>';
+            
+            document.body.appendChild(counterContainer);
+        });
+    </script>
+</body>
+
+</html>
