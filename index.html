@@ -446,13 +446,20 @@
             animation: scaleIn 0.3s ease;
         }
 
-        .modal-content img {
+        .modal-content img,
+        .modal-content embed,
+        .modal-content object {
             width: 100%;
             height: auto;
             max-height: 90vh;
             object-fit: contain;
             border-radius: 8px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content embed,
+        .modal-content object {
+            min-height: 500px;
         }
 
         .modal-close {
@@ -974,21 +981,21 @@
                 <h4>2025</h4>
                 <ul>
                     <li>
-                        <img src="./images/papers/odd_2025.webp" alt="ODD Specification Framework" class="publication-thumbnail" loading="lazy" onclick="openModal('./images/papers/odd_2025.webp')">
+                        <img src="./images/papers/odd_2025.webp" alt="ODD Specification Framework" class="publication-thumbnail" loading="lazy" onclick="openModal('./assets/papers_main_fig/odd_2025.pdf')">
                         <div class="publication-content">
                             <a href="./assets/pdf/2025_ODD.pdf" target="_blank"><strong>Specifying Operational Design Domain in Autonomous Driving for Comprehensive Data Evaluation</strong></a><br>
                             <span class="author-line">H. Barzamini, S. Ramesh, A. Adiththan, P. Peranandam, & M. Rahimi, IEEE 33rd International Requirements Engineering Conference (RE 2025), 43-55</span>
                         </div>
                     </li>
                     <li>
-                        <img src="./images/papers/ai_framework_2025.webp" alt="AI Requirements Engineering Framework" class="publication-thumbnail" loading="lazy" onclick="openModal('./images/papers/ai_framework_2025.webp')">
+                        <img src="./images/papers/ai_framework_2025.webp" alt="AI Requirements Engineering Framework" class="publication-thumbnail" loading="lazy" onclick="openModal('./assets/papers_main_fig/ai_framework_2025.pdf')">
                         <div class="publication-content">
                             <a href="./assets/pdf/2025-WAIS_CAIN25_IEEEFormat.pdf" target="_blank"><strong>An AI-driven Requirements Engineering Framework Tailored for Evaluating AI-Based Software</strong></a><br>
                             <span class="author-line">H. Barzamini, A. Brockmann, F. Nazaritiji, H. Ferdowsi, & M. Rahimi, CAIN 2025 — 4th International Conference on AI Engineering – Software Engineering for AI</span>
                         </div>
                     </li>
                     <li>
-                        <img src="./images/papers/concept_drift_2025.webp" alt="Concept Drift Analysis" class="publication-thumbnail" loading="lazy" onclick="openModal('./images/papers/concept_drift_2025.webp')">
+                        <img src="./images/papers/concept_drift_2025.webp" alt="Concept Drift Analysis" class="publication-thumbnail" loading="lazy" onclick="openModal('./assets/papers_main_fig/concept_drift_2025.pdf')">
                         <div class="publication-content">
                             <a href="./assets/pdf/2025_Concept_Drift_JDIS___revision__v2_.pdf" target="_blank"><strong>Dynamic domain analysis for predicting concept drift in engineering AI-enabled software</strong></a><br>
                             <span class="author-line">M. Shahzad, H. Barzamini, J. Wilson, H. Alhoori, & M. Rahimi, Journal of Data and Information Science, 10(2), 124-151</span>
@@ -999,28 +1006,28 @@
                 <h4>2022</h4>
                 <ul>
                     <li>
-                        <img src="./images/papers/semantic_web_2022.webp" alt="Multi-level Semantic Web" class="publication-thumbnail" loading="lazy" onclick="openModal('./images/papers/semantic_web_2022.webp')">
+                        <img src="./images/papers/semantic_web_2022.webp" alt="Multi-level Semantic Web" class="publication-thumbnail" loading="lazy" onclick="openModal('./assets/papers_main_fig/semantic_web_2022.pdf')">
                         <div class="publication-content">
                             <a href="./assets/pdf/2021_RE_Journal.pdf" target="_blank"><strong>A multi-level semantic web for hard-to-specify domain concept, Pedestrian, in ML-based software</strong></a><br>
                             <span class="author-line">H. Barzamini, M. Shahzad, H. Alhoori, & M. Rahimi, Requirements Engineering</span>
                         </div>
                     </li>
                     <li>
-                        <img src="./images/papers/bais_2022.webp" alt="B-AIS Framework" class="publication-thumbnail" loading="lazy" onclick="openModal('./images/papers/bais_2022.webp')">
+                        <img src="./images/papers/bais_2022.webp" alt="B-AIS Framework" class="publication-thumbnail" loading="lazy" onclick="openModal('./assets/papers_main_fig/bais_2022.pdf')">
                         <div class="publication-content">
                             <a href="./assets/pdf/2022_BAIS-ase22_209.pdf" target="_blank"><strong>B-AIS: An Automated Process for Black-box Evaluation of Visual Perception in AI-enabled Software against Domain Semantics</strong></a><br>
                             <span class="author-line">H. Barzamini & M. Rahimi, 37th IEEE/ACM International Conference on Automated Software Engineering (ASE 2022)</span>
                         </div>
                     </li>
                     <li>
-                        <img src="./images/papers/cade_2022.webp" alt="CADE Benchmark" class="publication-thumbnail" loading="lazy" onclick="openModal('./images/papers/cade_2022.webp')">
+                        <img src="./images/papers/cade_2022.webp" alt="CADE Benchmark" class="publication-thumbnail" loading="lazy" onclick="openModal('./assets/papers_main_fig/cade_2022.pdf')">
                         <div class="publication-content">
                             <a href="./assets/pdf/2022_RE_22_AIS.pdf" target="_blank"><strong>CADE: The Missing Benchmark in Evaluating Dataset Requirements of AI-enabled Software</strong></a><br>
                             <span class="author-line">H. Barzamini & M. Rahimi, IEEE 30th International Requirements Engineering Conference (RE 2022), 64-76</span>
                         </div>
                     </li>
                     <li>
-                        <img src="./images/papers/generalizability_2022.webp" alt="Generalizability Framework" class="publication-thumbnail" loading="lazy" onclick="openModal('./images/papers/generalizability_2022.webp')">
+                        <img src="./images/papers/generalizability_2022.webp" alt="Generalizability Framework" class="publication-thumbnail" loading="lazy" onclick="openModal('./assets/papers_main_fig/generalizability_2022.pdf')">
                         <div class="publication-content">
                             <a href="./assets/pdf/2022_ICSE_22_CAIN.pdf" target="_blank"><strong>Improving Generalizability of ML-enabled Software Through Domain Specification</strong></a><br>
                             <span class="author-line">H. Barzamini, M. Rahimi, M. Shahzad, & H. Alhoori, 1st International Conference on AI Engineering: Software Engineering for AI (CAIN 2022), 181-192</span>
@@ -1181,9 +1188,16 @@
         // Image Modal functionality
         function openModal(imageSrc) {
             const modal = document.getElementById('imageModal');
-            const modalImg = document.getElementById('modalImage');
-            if (modal && modalImg) {
-                modalImg.src = imageSrc;
+            const modalContent = document.querySelector('.modal-content');
+            if (modal && modalContent) {
+                // Check if it's a PDF
+                if (imageSrc.endsWith('.pdf')) {
+                    modalContent.innerHTML = '<span class="modal-close" onclick="closeModal()" aria-label="Close">&times;</span>' +
+                        '<embed src="' + imageSrc + '#toolbar=0&navpanes=0&scrollbar=0" type="application/pdf" style="width:100%;height:90vh;border-radius:8px;">';
+                } else {
+                    modalContent.innerHTML = '<span class="modal-close" onclick="closeModal()" aria-label="Close">&times;</span>' +
+                        '<img id="modalImage" src="' + imageSrc + '" alt="Publication diagram">';
+                }
                 modal.classList.add('active');
                 document.body.style.overflow = 'hidden'; // Prevent background scrolling
             }
